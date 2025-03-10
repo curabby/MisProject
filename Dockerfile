@@ -14,10 +14,10 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
-#CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
 CMD ["sh", "-c", "python manage.py makemigrations --noinput && \
     python manage.py migrate --noinput && \
     pytest -v --pdb && \
     python manage.py populate_fake_data && \
     python manage.py runserver 0.0.0.0:8000"]
-#CMD ["sh", "-c", "python manage.py makemigrations --noinput && python manage.py migrate --noinput && python manage.py populate_fake_data && python manage.py runserver 0.0.0.0:8000"]
+
