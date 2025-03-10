@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  django:
+    build: .
+    container_name: django_app
+    restart: always
+    volumes:
+      - ./MisProjectBackend/:/app
+      - ./MisProjectBackend/db.sqlite3:/app/db.sqlite3
+    ports:
+      - "8000:8000"
+
